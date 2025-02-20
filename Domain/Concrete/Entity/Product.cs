@@ -10,11 +10,10 @@ namespace Domain.Concrete.Entity
 {
     public class Product:IEntity
     {
-        public int ID { get; set; }
-
-        public string productName { get; set; }
-        public int Qantity { get; set; }
-
-
+        public int ProductId { get; set; }
+        public int CategoryId { get; set; }
+        public string ProductName { get; set; }
+        public short UnitsInStock { get; set; }
+        public decimal UnitPrice { get; set; }
     }
 }

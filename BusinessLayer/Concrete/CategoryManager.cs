@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BusinessLayer.Constants;
+using Core.Utilities.Results;
 
 namespace BusinessLayer.Concrete
 {
@@ -18,9 +20,14 @@ namespace BusinessLayer.Concrete
             _categoryDAL = categoryDAL;
         }
 
-        public void categoryAdd(Category category)
+        public IDataResult<List<Category>> GetAll()
         {
-            _categoryDAL.Add(category);
+            return new SuccessDataResult<List<Category>>(_categoryDAL.GetAll(),Messages.CategoryListed);
+        }
+
+        public IDataResult<Category> GetById(int categoryId)
+        {
+            return new SuccessDataResult<Category>(_categoryDAL.Get(c => c.CategoryId == categoryId));
         }
     }
 }

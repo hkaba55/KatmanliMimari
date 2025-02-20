@@ -1,4 +1,4 @@
-﻿using Core.EntityFramework;
+﻿using Core.DataAccess.EntityFramework;
 using DataAccess.Abstract;
 using Domain.Concrete.Entity;
 using System;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-   public class CategoryDAL: EfEntityRepositoryBase<Category,BaseDBContext>,ICategoryDAL
+   public class EFCategoryDAL: EfEntityRepositoryBase<Category,BaseDBContext>,ICategoryDAL
     {
 
     }

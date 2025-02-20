@@ -3,7 +3,7 @@ using Domain.Concrete.Entity;
 
 namespace DataAccess.Abstract
 {
-    public interface IUserDAL:IEntityRepository<User>
+    public interface ICustomerDAL:IEntityRepository<Customer>
     {
     }
 }
