@@ -2,7 +2,6 @@
 using BusinessLayer.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Domain.Concrete.Entity;
-using System.Reflection.Metadata;
 
 Console.WriteLine("Hello, World!");
 
