@@ -7,8 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
-{    interface IProductDAL:IEntityRepository<Product>
-
+{   public interface IProductDAL:IEntityRepository<Product>
     {
         
     }

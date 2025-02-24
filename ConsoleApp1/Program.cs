@@ -1,11 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using BusinessLayer.Concrete;
-using DataAccess.Concrete.EntityFramework;
-using Domain.Concrete.Entity;
+namespace ConsoleAppUI
+{
+    class Program
+    {
+        static void Main()
+        {
 
-Console.WriteLine("Hello, World!");
-
-
-
-
-
+        }
+    }
+}

@@ -11,5 +11,6 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EFProductDAL : EfEntityRepositoryBase<Product, BaseDBContext>, IProductDAL
     {
+
     }
 }

@@ -11,9 +11,10 @@ namespace BusinessLayer.Constants
     {
         public static string ProductAdded = "Ürün eklendi.";
         public static string ProductNameInValid = "Ürün ismi geçersiz";
-        internal static List<Product> MaintenanceTime;
-        internal static string ProductListed;
-        internal static string ProductUpdated;
-        internal static string CategoryListed;
+        public static string MaintenanceTime = "Oppsss :) Sistem bakımda. !";
+        public static string ProductListed = "Ürünler listelendi.";
+        public static string ProductUpdated = "Ürün güncellendi";
+        public static string CategoryListed = "Kategoriler Listelendi.";
+        public static string CategoryAdded = "Kategori eklendi.";
     }
 }

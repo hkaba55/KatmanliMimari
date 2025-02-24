@@ -17,7 +17,7 @@ namespace DataAccess.Concrete.EntityFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SeybilDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            optionsBuilder.UseSqlServer(@"Data Source=10.25.0.59;Database=SeybilDB;Persist Security Info=True;User ID=sa;Password=seybilbilisim2025;Encrypt=True;Trust Server Certificate=True");
         }
     }
 }

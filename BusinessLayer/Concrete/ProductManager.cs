@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Abstract;
 using BusinessLayer.Constants;
+using BusinessLayer.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
+using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Domain.Concrete.Entity;
 using Domain.DTOs;
@@ -14,16 +17,18 @@ namespace BusinessLayer.Concrete
 {
     public class ProductManager:IProductService
     {
-        private EFProductDAL _productDal;
+        private IProductDAL _productDal;
 
-        public ProductManager(EFProductDAL productDal)
+        public ProductManager(IProductDAL productDal)
         {
             _productDal = productDal;
         }
 
         public IDataResult<List<Product>> GetAll()
         {
-            if (DateTime.Now.Hour == 22)
+
+            //fluent
+            if (DateTime.Now.Hour == 13)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
@@ -52,15 +57,12 @@ namespace BusinessLayer.Concrete
             return new DataResult<Product>(_productDal.Get(p => p.ProductId == productId),true);
         }
 
+
+        [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
             //Business codes
 
-            if (product.ProductName.Length < 2)
-            {
-                //Magic strings
-                return new ErrorResult(Messages.ProductNameInValid);
-            }
             _productDal.Add(product);
 
             return new SuccessResult(Messages.ProductAdded);
